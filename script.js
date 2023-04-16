@@ -4,7 +4,7 @@ const formContainer = document.querySelector(".form_container");
 const formCloseBtn = document.querySelector(".form_close");
 const signupBtn = document.querySelector("#signup");
 const loginBtn = document.querySelector("#login");
-const pwShowHide = document.querySelectorAll(".pw-hide");
+const pwShowHide = document.querySelectorAll(".pw_hide");
 
 formOpenBtn.addEventListener("click", () => home.classList.add("show"));
 formCloseBtn.addEventListener("click", () => home.classList.remove("show"));
@@ -16,4 +16,17 @@ signupBtn.addEventListener("click", (e) => {
 loginBtn.addEventListener("click", (e) => {
   e.preventDefault();
   formContainer.classList.remove("active");
+});
+
+pwShowHide.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    let getPwInput = icon.parentElement.querySelector("input");
+    if (getPwInput.type === "password") {
+      getPwInput.type = "text";
+      icon.classList.replace("fa-eye-slash", "fa-eye");
+    } else {
+      getPwInput.type = "password";
+      icon.classList.replace("fa-eye", "fa-eye-slash");
+    }
+  });
 });

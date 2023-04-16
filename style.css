@@ -155,6 +155,7 @@ i.pw_hide {
   right: 0;
   font-size: 15px;
   color: #707070;
+  cursor: pointer;
 }
 .option_field {
   display: flex;
