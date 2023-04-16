@@ -67,6 +67,21 @@ button,
   background-size: cover;
   background-position: center;
 }
+.home::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-out;
+}
+.home.show::before {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 /* FORM */
 .form_container {
@@ -75,12 +90,15 @@ button,
   width: 100%;
   top: 41%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1.2);
   z-index: 101;
   background: #fff;
   padding: 25px;
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-out;
 }
 
 .form_close {
@@ -182,4 +200,10 @@ i.pw_hide {
 
 .signup_form {
   display: none;
+}
+
+.show .form_container {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
 }
