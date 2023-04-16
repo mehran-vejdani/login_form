@@ -201,6 +201,12 @@ i.pw_hide {
 .signup_form {
   display: none;
 }
+.form_container.active .signup_form {
+  display: block;
+}
+.form_container.active .login_form {
+  display: none;
+}
 
 .show .form_container {
   opacity: 1;
